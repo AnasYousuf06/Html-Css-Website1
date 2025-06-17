@@ -1,0 +1,732 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*,
+*::after,
+*::before{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* html{
+    font-size: 62.5%;
+} */
+body{
+      font-family: 'Montserrat', sans-serif Arial, Helvetica, sans-serif;
+}
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+.btn{
+    display: inline-block;
+    padding:10px 20px;
+    margin:5px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgb(139, 137, 137);
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.btn:hover{
+    background-color: #520c81;
+}
+
+.btn-primary{
+    color: #ffffff;
+    background: #3d0066;
+}
+.logo{
+    color:#520c81;
+}
+
+
+/* ########################Strat############################# */
+.navbar{
+    border-bottom: 1px solid silver;
+    background: rgb(243, 243, 243) ;
+}
+
+.navbar-container{
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.navbar-container h1{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+
+.nav-item {
+      display: flex;
+      list-style: none;
+}
+.nav-item a{
+        padding: 0.5rem;
+        text-decoration:none;
+        color: rgb(53, 53, 53);
+        font-size: 1rem;
+}
+
+.nav-item a:hover{
+    color: #3d0066;
+}
+
+.nav-item .li a{
+    font-weight: 500;
+}
+
+/* ############################section header################### */
+.section-container{
+    position: relative;
+    /* border: 10px solid silver; */
+    height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.335), rgba(0, 0, 0, 0.335)), url(../img/header-image2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+
+}
+
+.section-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.section-box .heading{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+}
+.section-box p{
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin:2px;
+    text-transform: capitalize;
+    color: rgb(46, 46, 46);
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* #################################Showcase########################################### */
+
+.showcase{
+    background: #F0F0F2; 
+}
+.showcase-container{
+    display:flex;
+    margin: 20px 0px;
+    padding: 5rem 0; 
+     
+}
+
+
+.showcase-img img{
+    width: 100%;
+    /* height: 100%; */
+    
+}
+.showcase-text h3{
+    font-weight: 500;
+    padding-bottom: 2px;
+}
+.showcase-text p {
+    padding: 5px 0;
+    line-height: 20px;
+}
+.showcase-hd{
+    font-weight: 600;
+    text-transform: capitalize;
+    padding-bottom: 5px;
+    font-size: 2rem;  
+}
+
+
+.showcase-text{
+    display: block;
+    width:100%;
+    /* padding: 5rem 0; */
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative; /* required for left to work */
+    animation: showcase-transition 1.5s ease-in-out forwards;
+}
+
+@keyframes showcase-transition {
+  from {
+    transform: translateX(-100%); /* start off screen left */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* slide to original position */
+    opacity: 1;
+  }
+}
+  
+.showcase-img{
+    display:block; 
+    width: 100%;
+    animation: showcase-transitionY 1.5s ease-in-out forwards;
+}
+@keyframes showcase-transitionY {
+    from {
+      transform: translateX(100%);
+      opacity:0;
+    }
+    to {
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+/* #########################FOOD CATEGORY########################### */
+
+.food-hd{
+    text-align: center;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin: 20px 0; 
+    text-transform: capitalize;
+}
+.food-category{
+  
+    margin: 5rem auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+
+
+/* .food-category{
+    content: '';
+    display: block;
+    clear: both;
+} */
+.food-imgs {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.food-imgs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* .food-type1,
+.food-type2 {
+  flex: 1;
+  margin-right: 3px;
+}
+
+.food-type3 {
+  flex: 1;
+  margin-right: 0; /* Last item ko margin nahi dena */
+
+ .img-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    opacity:0;
+    z-index:2;
+    text-align: center;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+ }
+
+.food-imgs::after{
+    content: '';
+    display:block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.871);
+    opacity: 0;
+    z-index: 1;
+    transform:scaleY(0);
+    transform-origin:bottom;
+    transition:all 0.3s ease-in-out;
+
+}
+
+
+ 
+.food-imgs:hover::after{
+    
+    opacity: 1;
+    transform:scaleY(1);
+
+}
+.food-imgs:hover .img-content{
+    opacity: 1;
+}
+
+/* #######################SEction pize bar########################## */
+
+#prizebar h3{
+    font-size:3rem;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:10rem 0px 5px 0;
+}
+.prizebar{
+    display:flex;
+    width: 50%;
+
+}
+.prize-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px 30px 0px;
+
+}
+
+.prizebar{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+}
+.prizebar-img img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.prizebar-descript{
+    margin:auto 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+
+.food-prize{
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}
+
+.prizebar-descript p{
+    font-size: 1.4rem;
+    color: #555;
+}
+.food-title{
+    padding-bottom: 1rem;
+    color: #555;
+}
+/* ############################Testimonal0img################################### */
+
+#testimonal{
+    background: #ececec;
+    padding: 3rem 1rem;
+    
+}
+.testimonal-hd{
+    font-size:3rem;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+    padding-bottom:2rem ;
+    color: #333;
+
+}
+.testimonals-text{
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 2rem;
+    color: rgb(255, 208, 0);
+    padding:10px
+
+    
+}
+
+.testimonals-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    
+   
+}
+
+.testimonals-img img{
+    display: block;
+    width:100px;
+    height: 100px ;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    padding: 10px 10px 0px 10px;
+    margin:0 auto 1rem auto;
+
+
+}
+.testimonials-cont {
+    background: #f9f9f9;
+    width: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonials-cont:hover {
+    transform: translateY(-5px);
+}
+.testimonals-img .p ,.testimonials-cont p{
+    font-weight: 600;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ########################Contact##################################### */
+/* Contact Section */
+/* Contact Section */
+#contact {
+    background: #f0f0f0;
+    padding: 4rem 1rem;
+}
+
+/* Container holding image and form side-by-side */
+
+
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* Contact Image Box */
+.contact-img {
+    flex: 1 1 40%;
+    margin-top: 1rem;
+}
+
+.contact-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1 1 50%;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Form Heading */
+.contact-form h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid #ccc;
+    color: #333;
+}
+
+/* Inputs & Textareas */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #007bff;
+}
+
+/* Textarea settings */
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Button or Anchor */
+.contact-form a,
+.contact-form button {
+    display: inline-block;
+    background-color: #3d0066;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form a:hover,
+.contact-form button:hover {
+    background-color: #520c81;
+}
+
+/* ####################################footer################## */
+.footer{
+    margin-top:5rem;
+}
+.footer h2{
+    
+background: #dddcdc;
+text-align: center;
+padding: 2rem 0;
+}
+
+
+input[type="checkbox"],
+.hamburger-lines {
+  display: none;
+}
+
+/* #####################MEdia query##################### */
+@media (max-width: 768px) {
+  .navbar-container {
+    position: relative;
+    height: 64px;
+  }
+
+  /* Hidden checkbox */
+  .navbar-container input[type='checkbox'] {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 32px;
+    width: 40px;
+    opacity: 0;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+.hamburger-lines,input[type="checkbox"] {
+    display: block;
+  }
+
+  /* Hamburger lines */
+  .hamburger-lines {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 32px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 4;
+    cursor: pointer;
+  }
+
+  .hamburger-lines .line {
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* Navigation menu hidden by default */
+  .nav-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: white;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .nav-item .li {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+  }
+
+  /* === Checkbox Toggle === */
+  .navbar-container input[type='checkbox']:checked ~ .nav-item {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line2 {
+    opacity: 0;
+  }
+
+  .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+}
+  /* ########food category############## */
+
+  @media (max-width: 768px){
+.logo{
+    margin-top: 0.7rem;
+    
+}
+.showcase-container{
+    text-align: center;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+.showcase-text{
+    margin: 1rem;
+}
+.showcase-text p{
+    margin:0;
+    padding: 0;
+}
+  } 
+
+ .food-category{
+    box-shadow: 5px 5px 10px 5px #aaa;
+    
+} 
+
+
+.food-type1{
+    margin-top: 3rem;
+    
+}
+.food-type1,.food-type2,.food-type3{
+    margin-bottom: 3rem; 
+}
+ .food-imgs {
+    margin:0;
+    
+} 
+.food-hd{
+    text-align: center;
+    margin-bottom: 0px;
+    /* border-bottom: 2px solid #3d0066; */
+    margin: auto;
+}
+.contact-img img{
+    background-position: center;
+    height:300px;
+ 
+}
+
+
+
+
+@media (max-width: 500px){
+   html{
+          font-size:50%;
+        } 
+#testimonals{
+    flex-direction: column;
+    text-align: center;
+
+}
+
+
+.prizebar{
+   
+    flex-direction: column;
+    text-align: center;
+}
+
+.prizebar-img img{
+    display: block;
+   
+    /* justify-content: center; */
+    
+
+}
+
+.h3{
+    margin: 10px 0px 0px 0px;
+    border-bottom: 2px solid #520c81;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-container{
+    display: block;
+    flex-direction: column;
+    
+}
+
+/* .contact-form textarea{
+    width: 100%;
+} */
+
+}  
